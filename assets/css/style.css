@@ -6,10 +6,17 @@
     float: left;
     display : block;
     padding: 8px;
-    background-color: white; 
+    background-color: red; 
     text-decoration: none;
+}
+h1 {
+    color: black;
+
+}
 
 
+label { 
+    color: black;
 }
 
 header {
