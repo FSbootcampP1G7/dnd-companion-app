@@ -39,4 +39,27 @@ li {
     font-weight: 400;
     font-style: normal;
   }
-  
+
+.gallery { 
+    border-radius: 5%;
+    display: block;
+    position : relative;
+    width: 50%;
+    border: 3px solid black;
+    padding: 5px;
+
+}
+
+p1 { 
+    position : relative;
+    left: 200px;
+}
+
+p2 { 
+
+    position: relative;
+    left : 300px;
+    bottom : 80px;
+
+    
+}
