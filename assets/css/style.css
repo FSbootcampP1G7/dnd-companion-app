@@ -1,4 +1,14 @@
-started doing code in css
-trying to make a commit
-working on the dnd project
-kdfkdkf
+.button {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden ;
+    float: left;
+    display : block;
+    padding: 8px;
+    background-color: black; 
+    text-decoration: none;
+
+
+}
+
