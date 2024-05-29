@@ -10,20 +10,25 @@ const humanStats = function() {
         console.log("After json", human);
 
         //change variable def based on layout of future HTML
+        // to make list will be to create variable for ol then append onto that
         const informationArea = document.getElementById('information');
         const name = document.createElement('h3');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
+        const traits = document.createElement('li');
 
 
-        name.textContent = 'Race: ' + human.index;
-        prof.textContent = 'Proficiencies: ' + human.starting_proficiencies.length;
-        lang.textContent = 'Languages: ' + human.languages[0].index;
+        name.textContent = 'Race: ' + human.name;
+        prof.textContent = 'Proficiencies: ' + 'None';
+        lang.textContent = 'Languages: ' + human.languages[0].name;
+        traits.textContent = 'Traits: None';
 
         //rearrange append information based on changed variables above
+        //also..appends are not working correctly. everything currents get put in an ordered list, and under h3 tag when the h3 only needs to be the "name" variable
         informationArea.append(name);
         name.append(prof);
         name.append(lang);
+        name.append(traits);
     })
 }
 
@@ -40,15 +45,18 @@ const dwarfStats = function() {
         const name = document.createElement('h3');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
+        const traits = document.createElement('li');
 
-        name.textContent = 'Race: ' + dwarf.index;
-        prof.textContent = 'Proficiencies: ' + dwarf.starting_proficiencies.length;
-        lang.textContent = 'Languages: ' + dwarf.languages[0].index + ', ' + dwarf.languages[1].index
+        name.textContent = 'Race: ' + dwarf.name;
+        prof.textContent = 'Proficiencies: ' + dwarf.starting_proficiencies[0].name + ', ' + dwarf.starting_proficiencies[1].name + ', ' + dwarf.starting_proficiencies[2].name + ', ' + dwarf.starting_proficiencies[3].name;
+        lang.textContent = 'Languages: ' + dwarf.languages[0].name + ', ' + dwarf.languages[1].name;
+        traits.textContent = 'Traits: ' + dwarf.traits[0].name + ', ' + dwarf.traits[1].name + ', ' + dwarf.traits[2].name + ', ' + dwarf.traits[3].name; + ', ' + dwarf.traits[4].name;
 
         //rearrange append information based on changed variables above
         informationArea2.append(name);
         name.append(prof);
         name.append(lang);
+        name.append(traits);
     })
 }
 
@@ -65,15 +73,19 @@ const elfStats = function() {
         const name = document.createElement('h3');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
+        const traits = document.createElement('li');
 
-        name.textContent = 'Race: ' + elf.index;
-        prof.textContent = 'Proficiencies: ' + elf.starting_proficiencies.length;
-        lang.textContent = 'Languages: ' + elf.languages[0].index + ', ' + elf.languages[1].index
+
+        name.textContent = 'Race: ' + elf.name;
+        prof.textContent = 'Proficiencies: ' + elf.starting_proficiencies[0].name;
+        lang.textContent = 'Languages: ' + elf.languages[0].name + ', ' + elf.languages[1].name;
+        traits.textContent = 'Traits: ' + elf.traits[0].name + ', ' + elf.traits[1].name + ', ' + elf.traits[2].name + ', ' + elf.traits[3].name;
 
         //rearrange append information based on changed variables above
         informationArea3.append(name);
         name.append(prof);
         name.append(lang);
+        name.append(traits);
     })
 }
 
@@ -90,15 +102,18 @@ const halflingStats = function() {
         const name = document.createElement('h3');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
+        const traits = document.createElement('li')
 
-        name.textContent = 'Race: ' + halfling.index;
-        prof.textContent = 'Proficiencies: ' + halfling.starting_proficiencies.length;
-        lang.textContent = 'Languages: ' + halfling.languages[0].index + ', ' + halfling.languages[1].index
+        name.textContent = 'Race: ' + halfling.name;
+        prof.textContent = 'Proficiencies: ' + 'None';
+        lang.textContent = 'Languages: ' + halfling.languages[0].name + ', ' + halfling.languages[1].name;
+        traits.textContent = 'Traits: ' + halfling.traits[0].name + ', ' + halfling.traits[1].name + ', ' + halfling.traits[2].name;
 
         //rearrange append information based on changed variables above
         informationArea4.append(name);
         name.append(prof);
         name.append(lang);
+        name.append(traits);
     })
 }
 
