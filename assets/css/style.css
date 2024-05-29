@@ -6,9 +6,30 @@
     float: left;
     display : block;
     padding: 8px;
-    background-color: black; 
+    background-color: white; 
     text-decoration: none;
 
 
 }
 
+header {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-style: solid;
+    color: white;
+}
+
+li {
+    display: inline-block;
+}
+
+.custom-font {
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
