@@ -1,3 +1,7 @@
+:root {
+    --m-r1: 1em;
+}
+
 header {
     display: flex;
     height: 100%;
@@ -9,8 +13,15 @@ header {
     color: white;
 }
 
+
 li {
     display: inline-block;
+    margin-right: var(--m-r1);
+}
+
+nav {
+    display: block;
+
 }
 
 .custom-font {
