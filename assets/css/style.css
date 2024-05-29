@@ -1,4 +1,21 @@
-started doing code in css
-trying to make a commit
-working on the dnd project
-kdfkdkf
+header {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    border-style: solid;
+    color: white;
+}
+
+li {
+    display: inline-block;
+}
+
+.custom-font {
+    font-family: "Pirata One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
