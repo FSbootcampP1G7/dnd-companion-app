@@ -8,6 +8,7 @@ button {
     color: white;
     background-color: black;
     border-color: white;
+    font-size: x-large;
 }
 
 body {
@@ -15,7 +16,7 @@ body {
 }
 
 h1 {
-    color: black;
+    color: white;
 }
 
 
@@ -28,6 +29,8 @@ header {
     background-color: black;
     color: white;
     padding: 20px;
+    font-size: xx-large;
+    border-style: inset;
 }
 
 label { 
@@ -37,6 +40,8 @@ label {
 li {
     display: inline-block;
     margin-right: var(--m-r1);
+    font-size: x-large;
+    padding: 8px;
 }
 
 nav {
@@ -70,6 +75,9 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
+    background-color: black;
+    border-style: inset;
+    
 }
 
 .footer-item {
@@ -80,3 +88,5 @@ nav {
     background-color: black;
     border-color: white;
 }
+
+
