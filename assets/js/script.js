@@ -86,7 +86,7 @@ const halflingStats = function() {
         console.log("After json", halfling);
 
         //change variable def based on layout of future HTML
-        const informationArea4 = document.getElementById('information2');
+        const informationArea4 = document.getElementById('information4');
         const name = document.createElement('h3');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
@@ -102,7 +102,35 @@ const halflingStats = function() {
     })
 }
 
+
+const classSpells = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(Spells) {
+        console.log("After json", Spells);
+
+        //change variable def based on layout of future HTML
+        const informationArea5 = document.getElementById('information5');
+        const name = document.createElement('h3');
+        const prof = document.createElement('li');
+        const lang = document.createElement('li');
+
+        // name.textContent = 'Race: ' + halfling.index;
+        // prof.textContent = 'Proficiencies: ' + halfling.starting_proficiencies.length;
+        // lang.textContent = 'Languages: ' + halfling.languages[0].index + ', ' + halfling.languages[1].index
+
+        //rearrange append information based on changed variables above
+        informationArea5.append(name);
+        name.append(prof);
+        name.append(lang);
+    })
+}
+
 buttonEL.addEventListener('click', humanStats);
 buttonEL.addEventListener('click', dwarfStats);
 buttonEL.addEventListener('click', elfStats);
 buttonEL.addEventListener('click', halflingStats);
+buttonEL.addEventListener('click', classSpells);
+
