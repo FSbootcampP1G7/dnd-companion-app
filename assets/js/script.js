@@ -141,16 +141,16 @@ const riddlePost = function(){
         console.log("Jokes here", joke);
         const jokeArea = document.getElementById('jokePost');
         const displayJoke = document.createElement('h3');
-        displayJoke.textContent =  joke.setup;
+        displayJoke.textContent = joke.setup;
         jokeArea.append(displayJoke);
     })
 }
 const answerPost = function(){
         return(function(answer){
-        console.log("Jokes here", answer);
+        console.log("answer here", answer);
         const answerArea = document.getElementById('jokeAnswer');
         const displayAnswer= document.createElement('h3');
-        displayAnswer.textContent =  answer.punchline;
+        displayAnswer.textContent = answer.punchline;
         answerArea.append(displayAnswer);
     })
 }
