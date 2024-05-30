@@ -24,7 +24,8 @@ const humanStats = function() {
         traits.textContent = 'Traits: None';
 
         //rearrange append information based on changed variables above
-        //also..appends are not working correctly. everything currents get put in an ordered list, and under h3 tag when the h3 only needs to be the "name" variable
+        //also..appends are not working correctly. everything currents get put in an ordered list, ...
+        //and under h3 tag when the h3 only needs to be the "name" variable
         informationArea.append(name);
         name.append(prof);
         name.append(lang);
@@ -117,7 +118,28 @@ const halflingStats = function() {
     })
 }
 
-buttonEL.addEventListener('click', humanStats);
-buttonEL.addEventListener('click', dwarfStats);
-buttonEL.addEventListener('click', elfStats);
-buttonEL.addEventListener('click', halflingStats);
+// these event listeners are for testing purposes
+// buttonEL.addEventListener('click', humanStats);
+// buttonEL.addEventListener('click', dwarfStats);
+// buttonEL.addEventListener('click', elfStats);
+// buttonEL.addEventListener('click', halflingStats);
+
+
+const characterName = document.getElementById('character-name');
+const characterRace = document.getElementById('');
+const characterClass = document.getElementById('');
+const submitBtn = document.getElementById('submitBtn');
+
+submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    const characterInfo = {
+        name: characterName.value.trim(),
+        // race: characterRace.value,
+        // class: characterClass.value
+    };
+
+
+
+    localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
+    
+});

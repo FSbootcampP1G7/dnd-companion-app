@@ -32,7 +32,7 @@
             <form>
               <div class="mb-3">
                 <label for="Character-name" class="col-form-label"><div class="custom-font"> Character's Name:</div></label>
-                <input type="text" class="form-control" id="Character-name">
+                <input type="text" class="form-control" id="character-name">
               </div>
               <div class="mb-3">
                 <label for="Character-class" class="col-form-label"><div class="custom-font"> Character's Class:</div></label>
@@ -49,7 +49,7 @@
                 <label for = "Character-race" class = " col-form-label"><div class="custom-font"> Character's Race:</div></label>
                 <select class="form-select form-select-lg mb-3" aria-label="Large select example">
                   <option selected>Select a race</option>
-                  <option value="1">Human</option>
+                  <option value="1" id="raceOne">Human</option>
                   <option value="2">Dwarf</option>
                   <option value="3">Elf</option>
                   <option value="4">Halfling</option>
@@ -59,7 +59,7 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" id="submitBtn">Submit</button>
           </div>
         </div>
       </div>
