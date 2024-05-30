@@ -55,28 +55,32 @@ nav {
     color: white;
   }
 
-.joke {
-    color: white;
+.gallery { 
+    border-radius: 5%;
+    display: block;
+    position : relative;
+    width: 50%;
+    border: 3px solid black;
+    padding: 5px;
+
 }
 
-.footer {
-    position: fixed;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    color: white;
-    padding: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
+p1 { 
+    color: red;
+    position : relative;
+    left: 200px;
 }
 
-.footer-item {
-    text-align: center;
+p2 { 
+    color: red;
+    position: relative;
+    left : 300px;
+    bottom : 70px;
+
+    
 }
 
-.modal-content {
-    background-color: black;
-    border-color: white;
+.desc {
+    color : red;
+    font-size: 12px;
 }

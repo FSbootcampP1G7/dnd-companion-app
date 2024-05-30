@@ -118,11 +118,11 @@ const halflingStats = function() {
     })
 }
 
-// // these event listeners are for testing purposes
+// these event listeners are for testing purposes
 // buttonEL.addEventListener('click', humanStats);
-// // buttonEL.addEventListener('click', dwarfStats);
-// // buttonEL.addEventListener('click', elfStats);
-// // buttonEL.addEventListener('click', halflingStats);
+// buttonEL.addEventListener('click', dwarfStats);
+// buttonEL.addEventListener('click', elfStats);
+// buttonEL.addEventListener('click', halflingStats);
 
 
 //////////API for footer/////////
@@ -131,9 +131,10 @@ const riddleButton = document.getElementById('riddle');
 const jokePost = document.getElementById('jokePost');
 const answerButton = document.getElementById('answer');
 const jokeAnswer = document.getElementById('jokeAnswer');
+const jokeApi = `https://official-joke-api.appspot.com/random_joke`
 
 const riddlePost = function(){
-    fetch('https://official-joke-api.appspot.com/random_joke')
+    fetch(jokeApi)
     .then(function(response){
         return response.json()
     })
@@ -141,19 +142,27 @@ const riddlePost = function(){
         console.log("Jokes here", joke);
         const jokeArea = document.getElementById('jokePost');
         const displayJoke = document.createElement('h3');
+        const answerArea = document.getElementById('jokeAnswer')
+        const displayAnswer = document.createElement('h3');
+
+        displayAnswer.textContent = answer.punchline;
         displayJoke.textContent = joke.setup;
         jokeArea.append(displayJoke);
-    })
-}
-const answerPost = function(){
-        return(function(answer){
-        console.log("answer here", answer);
-        const answerArea = document.getElementById('jokeAnswer');
-        const displayAnswer= document.createElement('h3');
-        displayAnswer.textContent = answer.punchline;
         answerArea.append(displayAnswer);
+
+        // riddleButton.addEventListener('click', riddlePost);
+        // answerButton.addEventListener('click', answerPost); 
     })
 }
+// const answerPost = function(){
+//         return(function(answer){
+//         console.log("answer here", answer);
+//         const answerArea = document.getElementById('jokeAnswer');
+//         const displayAnswer = document.createElement('h3');
+//         displayAnswer.textContent = answer.punchline;
+//         answerArea.append(displayAnswer);
+//     })
+// }
 riddleButton.addEventListener('click', riddlePost);
 answerButton.addEventListener('click', answerPost);
 
