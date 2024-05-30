@@ -1,43 +1,58 @@
-.button {
+button {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden ;
-    float: left;
-    display : block;
+    overflow: hidden;
     padding: 8px;
-    background-color: red; 
     text-decoration: none;
+    color: white;
+    background-color: black;
+    border-color: white;
 }
+
+body {
+    background-image: url('../images/background.jpg');
+}
+
 h1 {
     color: black;
-
 }
 
+
+header {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
 
 label { 
     color: black;
 }
 
-header {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    border-style: solid;
-    color: white;
-}
-
 li {
     display: inline-block;
+    margin-right: var(--m-r1);
+}
+
+nav {
+    display: block;
+}
+
+
+.output {
+    color: white;
 }
 
 .custom-font {
     font-family: "Pirata One", system-ui;
     font-weight: 400;
     font-style: normal;
+    color: white;
   }
 
 .gallery { 
@@ -51,15 +66,20 @@ li {
 }
 
 p1 { 
+    color: red;
     position : relative;
     left: 200px;
 }
 
 p2 { 
-
+    color: red;
     position: relative;
     left : 300px;
     bottom : 70px;
 
     
+}
+
+.desc {
+    color : red;
 }
