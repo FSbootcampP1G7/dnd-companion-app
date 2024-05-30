@@ -60,8 +60,13 @@ nav {
     color: white;
   }
 
-.joke {
-    color: white;
+.gallery { 
+    border-radius: 5%;
+    display: block;
+    position : relative;
+    width: 50%;
+    border: 3px solid black;
+    padding: 5px;
 }
 
 .footer {
@@ -77,15 +82,27 @@ nav {
     gap: 20px;
     background-color: black;
     border-style: inset;
+
 }
 
-.footer-item {
-    text-align: center;
+p1 { 
+    color: red;
+    position : relative;
+    left: 200px;
 }
 
-.modal-content {
-    background-color: black;
-    border-color: white;
+p2 { 
+    color: red;
+    position: relative;
+    left : 300px;
+    bottom : 70px;
+
+    
 }
 
+
+.desc {
+    color : red;
+    font-size: 12px;
+}
 
