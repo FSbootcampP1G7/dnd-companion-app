@@ -18,35 +18,42 @@
     <title>D&D Companion</title>
   </head>
 <header>
-  <div class="custom-font"><h1>DnD Companion App</h1></div>
-  <nav>
-     <ul>
-  <li><a href="https://www.dndbeyond.com/">DnD Beyond</a></li>
-  <li><a href="https://critrole.com/">Critical Roll</a></li>
-  <li><a href="https://company.wizards.com/en/">Wizards of the Coast</a></li>
-     </ul>
-   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Choose your Character</button>
+  <div class="custom-font"><h2>DnD Companion App</h2></div>
 
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Choose your Character</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">DND</h1>
+            <h1 class="modal-title fs-5" id="myModal"><div class="custom-font">DnD Companion App</div></h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="Character-name" class="col-form-label">Character's Name:</label>
+                <label for="Character-name" class="col-form-label"><div class="custom-font"> Character's Name:</div></label>
                 <input type="text" class="form-control" id="Character-name">
               </div>
               <div class="mb-3">
-                <label for="Character-class" class="col-form-label">Character's Class:</label>
-                <input class="form-control" id="Character-class"></textarea>
+                <label for="Character-class" class="col-form-label"><div class="custom-font"> Character's Class:</div></label>
+
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                  <option selected>Select a class</option>
+                  <option value="1">Fighter</option>
+                  <option value="2">Barbarian</option>
+                  <option value="3">Wizard</option>
+                  <option value="4">Ranger</option>
+                </select>
               </div>
               <div class = "mb-3">
-                <label for = "Character-race" class = " col-form-label">Character's Race</label>
-                <input type="text" class = " form-control" id ="Character-race">
+                <label for = "Character-race" class = " col-form-label"><div class="custom-font"> Character's Race:</div></label>
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                  <option selected>Select a race</option>
+                  <option value="1">Human</option>
+                  <option value="2">Dwarf</option>
+                  <option value="3">Elf</option>
+                  <option value="4">Halfling</option>
+                </select>
               </div>
             </form>
           </div>
@@ -58,13 +65,16 @@
       </div>
     </div>
   
-    
+    <nav>
+  <li><a href="https://www.dndbeyond.com/">DnD Beyond</a></li>
+  <li><a href="https://critrole.com/">Critical Roll</a></li>
+  <li><a href="https://company.wizards.com/en/">Wizards of the Coast</a></li>
+    </nav>
+</header>
   
-  </nav>
-</header> 
-  
+
+                         
   <body>
-    
     <div class="gallery">
       <a target="_blank" href="jackofblades.png">
         <img src="jackofblades.png" alt="Jack Of Blades" width="600" height="400">
@@ -92,10 +102,12 @@
       </a>
       <div class="desc">Add a description of the image here</div>
     </div>
-
+  
+  
     <!-- Bootstrap version 5.3.3 for JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
+
   </body>
 </html>
 

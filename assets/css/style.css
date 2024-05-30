@@ -1,17 +1,17 @@
-.button {
+button {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden ;
-    float: left;
-    display : block;
+    overflow: hidden;
     padding: 8px;
-    background-color: red; 
     text-decoration: none;
+}
+
+body {
+    background-image: url('../images/background.jpg');
 }
 h1 {
     color: black;
-
 }
 
 
@@ -21,22 +21,33 @@ label {
 
 header {
     display: flex;
-    height: 100%;
+    height: 100px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
     background-color: black;
-    border-style: solid;
     color: white;
+    padding: 20px;
 }
+
 
 li {
     display: inline-block;
+    margin-right: var(--m-r1);
+}
+
+nav {
+    display: block;
 }
 
 .custom-font {
     font-family: "Pirata One", system-ui;
     font-weight: 400;
     font-style: normal;
+    color: white;
   }
   
+.modal-content {
+    background-color: black;
+    border-color: white;
+}
