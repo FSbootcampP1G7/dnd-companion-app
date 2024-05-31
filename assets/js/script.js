@@ -102,6 +102,7 @@ const halflingStats = function() {
     })
 }
 
+<<<<<<< HEAD
 
 const classSpells = function() {
     fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
@@ -133,4 +134,50 @@ buttonEL.addEventListener('click', dwarfStats);
 buttonEL.addEventListener('click', elfStats);
 buttonEL.addEventListener('click', halflingStats);
 buttonEL.addEventListener('click', classSpells);
+=======
+// buttonEL.addEventListener('click', humanStats);
+// buttonEL.addEventListener('click', dwarfStats);
+// buttonEL.addEventListener('click', elfStats);
+// buttonEL.addEventListener('click', halflingStats);
+
+
+//////////API for footer/////////
+
+const riddleButton = document.getElementById('riddle');
+const jokePost = document.getElementById('jokePost');
+const answerButton = document.getElementById('answer');
+const jokeAnswer = document.getElementById('jokeAnswer');
+
+const riddlePost = function(){
+    fetch('https://official-joke-api.appspot.com/random_joke')
+    .then(function(response){
+        return response.json()
+    })
+    .then(function(joke){
+        console.log("Jokes here", joke);
+        const jokeArea = document.getElementById('jokePost');
+        const displayJoke = document.createElement('h3');
+        displayJoke.textContent =  joke.setup;
+        jokeArea.append(displayJoke);
+    })
+}
+const answerPost = function(){
+        return(function(answer){
+        console.log("Jokes here", answer);
+        const answerArea = document.getElementById('jokeAnswer');
+        const displayAnswer= document.createElement('h3');
+        displayAnswer.textContent =  answer.punchline;
+        answerArea.append(displayAnswer);
+    })
+}
+riddleButton.addEventListener('click', riddlePost);
+answerButton.addEventListener('click', answerPost);
+
+
+
+
+
+
+
+>>>>>>> 5fadd3d800ea752739864fef25092d5aca452ba4
 
