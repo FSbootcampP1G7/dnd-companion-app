@@ -1,5 +1,11 @@
 const buttonEL = document.getElementById('clickMe');
 const information = document.getElementById('information');
+let characterObject = {
+    name: '',
+    prof: '',
+    lang: '',
+    traits: ''
+} 
 
 const humanStats = function() {
     fetch('https://www.dnd5eapi.co/api/races/human')
@@ -16,6 +22,15 @@ const humanStats = function() {
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
+
+
+        characterObject.name = human.name
+        characterObject.prof = human.starting_proficiencies.length
+        characterObject.lang = human.languages[0]
+        characterObject.traits = human.traits.length
+        console.log('characterObject', characterObject);
+        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        console.log('json human name', JSON.parse(localStorage.getItem(characterObject.name)))
 
 
         name.textContent = 'Race: ' + human.name;
@@ -47,6 +62,14 @@ const dwarfStats = function() {
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
+        
+        characterObject.name = dwarf.name
+        characterObject.prof = dwarf.starting_proficiencies.length
+        characterObject.lang = dwarf.languages[0]
+        characterObject.traits = dwarf.traits.length
+        console.log('characterObject', characterObject);
+        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        console.log('json dwarf name', JSON.parse(localStorage.getItem(characterObject.name)))
 
         name.textContent = 'Race: ' + dwarf.name;
         prof.textContent = 'Proficiencies: ' + dwarf.starting_proficiencies[0].name + ', ' + dwarf.starting_proficiencies[1].name + ', ' + dwarf.starting_proficiencies[2].name + ', ' + dwarf.starting_proficiencies[3].name;
@@ -75,6 +98,14 @@ const elfStats = function() {
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
+
+        characterObject.name = elf.name
+        characterObject.prof = elf.starting_proficiencies.length
+        characterObject.lang = elf.languages[0]
+        characterObject.traits = elf.traits.length
+        console.log('characterObject', characterObject);
+        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        console.log('json elf name', JSON.parse(localStorage.getItem(characterObject.name)))
 
 
         name.textContent = 'Race: ' + elf.name;
@@ -105,6 +136,14 @@ const halflingStats = function() {
         const lang = document.createElement('li');
         const traits = document.createElement('li')
 
+        characterObject.name = halfling.name
+        characterObject.prof = halfling.starting_proficiencies.length
+        characterObject.lang = halfling.languages[0]
+        characterObject.traits = halfling.traits.length
+        console.log('characterObject', characterObject);
+        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        console.log('json halfling name', JSON.parse(localStorage.getItem(characterObject.name)))
+
         name.textContent = 'Race: ' + halfling.name;
         prof.textContent = 'Proficiencies: ' + 'None';
         lang.textContent = 'Languages: ' + halfling.languages[0].name + ', ' + halfling.languages[1].name;
@@ -119,10 +158,10 @@ const halflingStats = function() {
 }
 
 // these event listeners are for testing purposes
-// buttonEL.addEventListener('click', humanStats);
-// buttonEL.addEventListener('click', dwarfStats);
-// buttonEL.addEventListener('click', elfStats);
-// buttonEL.addEventListener('click', halflingStats);
+buttonEL.addEventListener('click', humanStats);
+buttonEL.addEventListener('click', dwarfStats);
+buttonEL.addEventListener('click', elfStats);
+buttonEL.addEventListener('click', halflingStats);
 
 
 //////////API for footer/////////
@@ -177,8 +216,8 @@ let output = document.getElementById('output');
 
 let child, delBtn, h2, p;
 
-addBtn.addEventListener('click', function(e){
-    e.preventDefault();
+addBtn.addEventListener('click', function(event){
+    event.preventDefault();
     if ((inputTitle.value == '') | (inputTitle.value == ' ')) {
         alert("Please write a title.")
 
@@ -214,9 +253,16 @@ addBtn.addEventListener('click', function(e){
 })
 
 const characterName = document.getElementById('character-name');
-const characterRace = document.getElementById('');
-const characterClass = document.getElementById('');
-const submitBtn = document.getElementById('submitBtn');
+const raceHuman = document.getElementById('raceOne');
+const raceDwarf = document.getElementById('raceTwo');
+const raceElf = document.getElementById('raceThree');
+const raceHalfling = document.getElementById('raceFour');
+const classFighter = document.getElementById('classOne');
+const classBarbarian = document.getElementById('classTwo');
+const classWizard = document.getElementById('classThree');
+const classRanger = document.getElementById('classFour');
+
+const submitBtn = document.getElementById('modelSubmitBtn');
 
 submitBtn.addEventListener('click', function(event) {
     event.preventDefault();
