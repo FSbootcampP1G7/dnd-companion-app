@@ -103,30 +103,30 @@ const halflingStats = function() {
 }
 
 
-const classSpells = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(Spells) {
-        console.log("After json", Spells);
+// const classSpells = function() {
+//     fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
+//     .then(function(response) {
+//          return response.json()
+//     })
+//     .then(function(Spells) {
+//         console.log("After json", Spells);
 
-        //change variable def based on layout of future HTML
-        const informationArea5 = document.getElementById('information5');
-        const name = document.createElement('h3');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
+//         //change variable def based on layout of future HTML
+//         const informationArea5 = document.getElementById('information5');
+//         const name = document.createElement('h3');
+//         const prof = document.createElement('li');
+//         const lang = document.createElement('li');
 
-        // name.textContent = 'Race: ' + halfling.index;
-        // prof.textContent = 'Proficiencies: ' + halfling.starting_proficiencies.length;
-        // lang.textContent = 'Languages: ' + halfling.languages[0].index + ', ' + halfling.languages[1].index
+//         // name.textContent = 'Race: ' + halfling.index;
+//         // prof.textContent = 'Proficiencies: ' + halfling.starting_proficiencies.length;
+//         // lang.textContent = 'Languages: ' + halfling.languages[0].index + ', ' + halfling.languages[1].index
 
-        //rearrange append information based on changed variables above
-        informationArea5.append(name);
-        name.append(prof);
-        name.append(lang);
-    })
-}
+//         //rearrange append information based on changed variables above
+//         informationArea5.append(name);
+//         name.append(prof);
+//         name.append(lang);
+//     })
+// }
 
 
 const classSpecificInfo = function() {
@@ -145,28 +145,42 @@ const classSpecificInfo = function() {
         const spellsByLevel2 = document.createElement('li');
         const spellsByLevel3 = document.createElement('li');
         const arcaneRecovery = document.createElement('li');
-
+        
         
 
-        // for (i = 0; i < 5; i++) {
-        level.textContent = 'Wizard Level: ' + levels[0].level;
-        console.log(level.textContent);
-        // cantrips.textContent = "Cantrips for this level: " + levels.[0].spellcasting.cantrips_known;
-        // spellsByLevel1.textContent = "Level 1 spell slots: " + levels.[0].spellcasting.spell_slots_level_1;
-        // spellsByLevel2.textContent = "Level 2 spell slots: " + levels.[0].spellcasting.spell_slots_level_2;
-        // spellsByLevel3.textContent = "Level 3 spell slots: " + levels.[0].spellcasting.spell_slots_level_3;
-        // arcaneRecovery.textContent = "Arcane Recovery: " + levels.[0].class_specific.arcane_recovery_levels;
-        // }
+        for (i = 0; i < 5; i++) {
+            level.textContent = 'Wizard Level: ' + levels[i].level;
+            console.log(level.textContent);
 
+
+            cantrips.textContent = "Cantrips for this level: " + levels[i].spellcasting.cantrips_known;
+            spellsByLevel1.textContent = "Level 1 spell slots: " + levels[i].spellcasting.spell_slots_level_1;
+            spellsByLevel2.textContent = "Level 2 spell slots: " + levels[i].spellcasting.spell_slots_level_2;
+            spellsByLevel3.textContent = "Level 3 spell slots: " + levels[i].spellcasting.spell_slots_level_3;
+            arcaneRecovery.textContent = "Arcane Recovery: " + levels[i].class_specific.arcane_recovery_levels;
+
+            // console.log(cantrips.textContent);
+            // console.log(spellsByLevel1.textContent);
+            // console.log(spellsByLevel2.textContent);
+            // console.log(spellsByLevel3.textContent);
+            // console.log(arcaneRecovery.textContent);
+        }
         //rearrange append information based on changed variables above
-        informationArea5.append(level);
-        //level.append(level);
-        level.append(cantrips);
-        level.append(spellsByLevel1);
-        level.append(spellsByLevel2);
-        level.append(spellsByLevel3);
+        for (i = 0; i < 5; i++) {
+            informationArea5.append(level);
+            informationArea5.append(cantrips);
+            informationArea5.append(spellsByLevel1);
+            informationArea5.append(spellsByLevel2);
+            informationArea5.append(spellsByLevel3);
+            informationArea5.append(arcaneRecovery);
+        }
 
     })
+}
+
+let myAttempt = [];
+for (i = 0; i < 5; i++) {
+     
 }
 
 
@@ -174,7 +188,8 @@ buttonEL.addEventListener('click', humanStats);
 buttonEL.addEventListener('click', dwarfStats);
 buttonEL.addEventListener('click', elfStats);
 buttonEL.addEventListener('click', halflingStats);
-buttonEL.addEventListener('click', classSpells);
+//buttonEL.addEventListener('click', classSpells);
+buttonEL.addEventListener('click', classSpecificInfo);
 // buttonEL.addEventListener('click', humanStats);
 // buttonEL.addEventListener('click', dwarfStats);
 // buttonEL.addEventListener('click', elfStats);
@@ -210,13 +225,5 @@ const answerPost = function(){
         answerArea.append(displayAnswer);
     })
 }
-riddleButton.addEventListener('click', riddlePost);
-answerButton.addEventListener('click', answerPost);
-
-
-
-
-
-
-
-
+// riddleButton.addEventListener('click', riddlePost);
+// answerButton.addEventListener('click', answerPost);
