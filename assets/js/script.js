@@ -150,8 +150,8 @@ const riddlePost = function(){
         jokeArea.append(displayJoke);
         answerArea.append(displayAnswer);
 
-        // riddleButton.addEventListener('click', riddlePost);
-        // answerButton.addEventListener('click', answerPost); 
+        riddleButton.addEventListener('click', riddlePost);
+        answerButton.addEventListener('click', answerPost); 
     })
 }
 // const answerPost = function(){
@@ -163,8 +163,9 @@ const riddlePost = function(){
 //         answerArea.append(displayAnswer);
 //     })
 // }
-riddleButton.addEventListener('click', riddlePost);
-answerButton.addEventListener('click', answerPost);
+
+// riddleButton.addEventListener('click', riddlePost);
+// answerButton.addEventListener('click', answerPost);
 
 
 const characterName = document.getElementById('character-name');
