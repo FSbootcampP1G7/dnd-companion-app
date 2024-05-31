@@ -102,7 +102,6 @@ const halflingStats = function() {
     })
 }
 
-<<<<<<< HEAD
 
 const classSpells = function() {
     fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
@@ -129,12 +128,53 @@ const classSpells = function() {
     })
 }
 
+
+const classSpecificInfo = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levels) {
+        console.log("After json", levels);
+
+        //change variable def based on layout of future HTML 
+        const informationArea5 = document.getElementById('information5');
+        const level = document.createElement('h3');
+        const cantrips = document.createElement('li');
+        const spellsByLevel1 = document.createElement('li');
+        const spellsByLevel2 = document.createElement('li');
+        const spellsByLevel3 = document.createElement('li');
+        const arcaneRecovery = document.createElement('li');
+
+        
+
+        // for (i = 0; i < 5; i++) {
+        level.textContent = 'Wizard Level: ' + levels[0].level;
+        console.log(level.textContent);
+        // cantrips.textContent = "Cantrips for this level: " + levels.[0].spellcasting.cantrips_known;
+        // spellsByLevel1.textContent = "Level 1 spell slots: " + levels.[0].spellcasting.spell_slots_level_1;
+        // spellsByLevel2.textContent = "Level 2 spell slots: " + levels.[0].spellcasting.spell_slots_level_2;
+        // spellsByLevel3.textContent = "Level 3 spell slots: " + levels.[0].spellcasting.spell_slots_level_3;
+        // arcaneRecovery.textContent = "Arcane Recovery: " + levels.[0].class_specific.arcane_recovery_levels;
+        // }
+
+        //rearrange append information based on changed variables above
+        informationArea5.append(level);
+        //level.append(level);
+        level.append(cantrips);
+        level.append(spellsByLevel1);
+        level.append(spellsByLevel2);
+        level.append(spellsByLevel3);
+
+    })
+}
+
+
 buttonEL.addEventListener('click', humanStats);
 buttonEL.addEventListener('click', dwarfStats);
 buttonEL.addEventListener('click', elfStats);
 buttonEL.addEventListener('click', halflingStats);
 buttonEL.addEventListener('click', classSpells);
-=======
 // buttonEL.addEventListener('click', humanStats);
 // buttonEL.addEventListener('click', dwarfStats);
 // buttonEL.addEventListener('click', elfStats);
@@ -179,5 +219,4 @@ answerButton.addEventListener('click', answerPost);
 
 
 
->>>>>>> 5fadd3d800ea752739864fef25092d5aca452ba4
 
