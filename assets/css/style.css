@@ -13,6 +13,7 @@ button {
 
 body {
     background-image: url('../images/background.jpg');
+    
 }
 
 h1 {
@@ -66,7 +67,12 @@ nav {
     position : relative;
     width: 50%;
     border: 3px solid black;
-    padding: 5px;
+    padding: 5px; 
+}
+
+.modal-content {
+    background-color: black;
+    border-color: white;
 }
 
 .footer {
@@ -82,7 +88,6 @@ nav {
     gap: 20px;
     background-color: black;
     border-style: inset;
-
 }
 
 p1 { 
@@ -104,7 +109,19 @@ p2 {
     font-size: 12px;
 }
 
-.modal-content {
+.traits,
+.abilities,
+.skills,
+.spell, 
+.race,
+.class {
+   border-style: inset;
     background-color: black;
-    border-color: white;
+  width: 500px;
+  padding: 10px;
+  margin: 20px;
+  left : 300px;
+  bottom : 200px;
+ font-size: x-large;
+ 
 }
