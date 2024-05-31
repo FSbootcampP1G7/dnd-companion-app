@@ -61,15 +61,6 @@ nav {
     color: white;
   }
 
-.gallery { 
-    border-radius: 5%;
-    display: block;
-    position : relative;
-    width: 50%;
-    border: 3px solid black;
-    padding: 5px; 
-}
-
 .modal-content {
     background-color: black;
     border-color: white;
@@ -90,34 +81,77 @@ nav {
     border-style: inset;
 }
 
-p1 { 
-    color: red;
-    position : relative;
-    left: 200px;
+.note-box {
+    max-width: 500px;
+    width: 100%;
+    margin-left: 1400px;
+    margin-bottom: 100px;
+    border-style: inset;
+    background-color: grey;
 }
 
-p2 { 
-    color: red;
+.note-box h1 {
+    text-align: center;
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.title-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 15px 10px;
+    margin-bottom: 5px;
+}
+
+.title-container button,
+.delete {
+   
+    font-size: 20px;
+    border-style: inset;
+    background-color: black;
+}
+
+.title-container button:hover {
+    background-color: red;
+}
+
+#note-text {
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+    min-height: 200px;
+    width: 100%;
+}
+
+#output {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px 10px;
+}
+
+.lists {
+    background-color: black;
+    padding: 15px;
+    border-radius: 5px;
     position: relative;
-    left : 300px;
-    bottom : 70px;
 }
 
-
-.desc {
-    color : red;
-    font-size: 12px;
+.delete {
+    float: right;
 }
 
-.traits,
-.abilities,
-.skills,
-.spell, 
+.name,
+.class,
 .race,
-.class {
+.abilities,
+.spell, 
+.skills {
    border-style: inset;
     background-color: black;
-  width: 500px;
+  width: 650px;
   padding: 10px;
   margin: 20px;
   left : 300px;
