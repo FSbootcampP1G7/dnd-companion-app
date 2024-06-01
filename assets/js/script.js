@@ -131,7 +131,7 @@ const halflingStats = function(characterName) {
 
 /////MODEL FORM//////
 
-//TODO: form reset and validation. info is staying on page instead of resetting with new character. 
+//TODO: form validation.
 
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
     keyboard: false
@@ -160,9 +160,7 @@ submitBtn.addEventListener('click', function(event) {
             halflingStats(characterInfo)
             break
             default: 
-            alert('Please Enter all Information');
-    };
-
+    }; 
     myModal.hide();
 });
 
@@ -172,8 +170,6 @@ const pageReset = function() {
     traits.textContent = 'Traits: None';
     charName.textContent = 'Character Name: ' 
 }
-
-
 
 //////////////////
 
