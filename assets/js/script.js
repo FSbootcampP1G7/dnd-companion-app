@@ -7,6 +7,7 @@ let characterObject = {
     traits: ''
 } 
 
+
 const humanStats = function() {
     fetch('https://www.dnd5eapi.co/api/races/human')
     .then(function(response) {
@@ -157,32 +158,7 @@ const halflingStats = function() {
     })
 }
 
-<<<<<<< HEAD
-
-// const classSpells = function() {
-//     fetch("https://www.dnd5eapi.co/api/classes/wizard/spells")
-//     .then(function(response) {
-//          return response.json()
-//     })
-//     .then(function(Spells) {
-//         console.log("After json", Spells);
-
-//         //change variable def based on layout of future HTML
-//         const informationArea5 = document.getElementById('information5');
-//         const name = document.createElement('h3');
-//         const prof = document.createElement('li');
-//         const lang = document.createElement('li');
-
-//         // name.textContent = 'Race: ' + halfling.index;
-//         // prof.textContent = 'Proficiencies: ' + halfling.starting_proficiencies.length;
-//         // lang.textContent = 'Languages: ' + halfling.languages[0].index + ', ' + halfling.languages[1].index
-
-//         //rearrange append information based on changed variables above
-//         informationArea5.append(name);
-//         name.append(prof);
-//         name.append(lang);
-//     })
-// }
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 const classSpecificInfo = function() {
@@ -208,7 +184,6 @@ const classSpecificInfo = function() {
             level.textContent = 'Wizard Level: ' + levels[i].level;
             console.log(level.textContent);
 
-
             cantrips.textContent = "Cantrips for this level: " + levels[i].spellcasting.cantrips_known;
             spellsByLevel1.textContent = "Level 1 spell slots: " + levels[i].spellcasting.spell_slots_level_1;
             spellsByLevel2.textContent = "Level 2 spell slots: " + levels[i].spellcasting.spell_slots_level_2;
@@ -230,32 +205,19 @@ const classSpecificInfo = function() {
             informationArea5.append(spellsByLevel3);
             informationArea5.append(arcaneRecovery);
         }
-
     })
 }
 
-let myAttempt = [];
-for (i = 0; i < 5; i++) {
-     
-}
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-=======
 // these event listeners are for testing purposes
->>>>>>> 4b109ff3322fa014ad118c74c6eb58b1f4a06e05
 buttonEL.addEventListener('click', humanStats);
 buttonEL.addEventListener('click', dwarfStats);
 buttonEL.addEventListener('click', elfStats);
 buttonEL.addEventListener('click', halflingStats);
-<<<<<<< HEAD
 //buttonEL.addEventListener('click', classSpells);
 buttonEL.addEventListener('click', classSpecificInfo);
-// buttonEL.addEventListener('click', humanStats);
-// buttonEL.addEventListener('click', dwarfStats);
-// buttonEL.addEventListener('click', elfStats);
-// buttonEL.addEventListener('click', halflingStats);
-=======
->>>>>>> 4b109ff3322fa014ad118c74c6eb58b1f4a06e05
+
 
 
 //////////API for footer/////////
@@ -287,10 +249,8 @@ const riddlePost = function(){
         answerButton.addEventListener('click', answerPost); 
     })
 }
-<<<<<<< HEAD
 // riddleButton.addEventListener('click', riddlePost);
 // answerButton.addEventListener('click', answerPost);
-=======
 // const answerPost = function(){
 //         return(function(answer){
 //         console.log("answer here", answer);
@@ -314,41 +274,41 @@ let output = document.getElementById('output');
 
 let child, delBtn, h2, p;
 
-addBtn.addEventListener('click', function(event){
-    event.preventDefault();
-    if ((inputTitle.value == '') | (inputTitle.value == ' ')) {
-        alert("Please write a title.")
+// addBtn.addEventListener('click', function(event){
+//     event.preventDefault();
+//     if ((inputTitle.value == '') | (inputTitle.value == ' ')) {
+//         alert("Please write a title.")
 
-    }else if((inputText.value == '') | (inputText.value == ' ')){
-        alert("Please write a note.")
-    }else {
-        child = document.createElement("div");
-        delBtn = document.createElement("button");
-        h2 = document.createElement("h2");
-        p = document.createElement("p");
+//     }else if((inputText.value == '') | (inputText.value == ' ')){
+//         alert("Please write a note.")
+//     }else {
+//         child = document.createElement("div");
+//         delBtn = document.createElement("button");
+//         h2 = document.createElement("h2");
+//         p = document.createElement("p");
 
-        h2.innerHTML = inputTitle.value;
-        p.innerHTML = inputText.value;
-        delBtn.innerHTML = "Delete";
+//         h2.innerHTML = inputTitle.value;
+//         p.innerHTML = inputText.value;
+//         delBtn.innerHTML = "Delete";
         
-        child.classList.add('lists');
-        delBtn.classList.add('delete');
-        h2.classList.add('output-title');
-        p.classList.add('text');
+//         child.classList.add('lists');
+//         delBtn.classList.add('delete');
+//         h2.classList.add('output-title');
+//         p.classList.add('text');
 
-        child.appendChild(delBtn);
-        child.appendChild(h2);
-        child.appendChild(p);
-        output.appendChild(child);
+//         child.appendChild(delBtn);
+//         child.appendChild(h2);
+//         child.appendChild(p);
+//         output.appendChild(child);
 
-        inputTitle.innerHTML = "";
-        inputText.innerHTML = "";
-    }
-    delBtn.addEventListener('click', function(){
-        output.removeChild(this.parentElement);
+//         inputTitle.innerHTML = "";
+//         inputText.innerHTML = "";
+//     }
+//     delBtn.addEventListener('click', function(){
+//         output.removeChild(this.parentElement);
         
-})
-})
+// })
+// })
 
 const characterName = document.getElementById('character-name');
 const raceHuman = document.getElementById('raceOne');
@@ -362,17 +322,16 @@ const classRanger = document.getElementById('classFour');
 
 const submitBtn = document.getElementById('modelSubmitBtn');
 
-submitBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    const characterInfo = {
-        name: characterName.value.trim(),
-        // race: characterRace.value,
-        // class: characterClass.value
-    };
+// submitBtn.addEventListener('click', function(event) {
+//     event.preventDefault();
+//     const characterInfo = {
+//         name: characterName.value.trim(),
+//         // race: characterRace.value,
+//         // class: characterClass.value
+//     };
 
 
 
-    localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
+//     localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
     
-});
->>>>>>> 4b109ff3322fa014ad118c74c6eb58b1f4a06e05
+// });
