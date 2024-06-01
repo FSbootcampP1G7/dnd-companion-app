@@ -24,7 +24,12 @@ This web application is for individuals who play Dungeons & Dragons. It is desig
 * https://www.dnd5eapi.co/
 * https://icanhazdadjoke.com/
 
+## Links
+* Repo: https://github.com/FSbootcampP1G7/dnd-companion-app
+* deployed: https://fsbootcampp1g7.github.io/dnd-companion-app/
+
 ## Static Images
 
 ![D&D Companion App!](/assets/images/dnd-app.PNG "Screen-Shot of DnD page")
 
+<!-- TODO: Get updated static image after last merge -->
