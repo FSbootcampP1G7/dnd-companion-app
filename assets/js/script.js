@@ -131,8 +131,6 @@ const halflingStats = function(characterName) {
 
 /////MODEL FORM//////
 
-//TODO: form validation.
-
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
     keyboard: false
   })
