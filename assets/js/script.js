@@ -1,5 +1,15 @@
 const buttonEL = document.getElementById('clickMe');
 const information = document.getElementById('information');
+const raceHuman = document.getElementById('raceOne');
+const raceDwarf = document.getElementById('raceTwo');
+const raceElf = document.getElementById('raceThree');
+const raceHalfling = document.getElementById('raceFour');
+const classFighter = document.getElementById('classOne');
+const classBarbarian = document.getElementById('classTwo');
+const classWizard = document.getElementById('classThree');
+const classRanger = document.getElementById('classFour');
+const submitBtn = document.getElementById('modelSubmitBtn');
+
 let characterObject = {
     name: '',
     prof: '',
@@ -7,7 +17,9 @@ let characterObject = {
     traits: ''
 } 
 
-const humanStats = function() {
+////////RACE STATS//////////////
+
+const humanStats = function(characterName) {
     fetch('https://www.dnd5eapi.co/api/races/human')
     .then(function(response) {
         return response.json()
@@ -15,40 +27,36 @@ const humanStats = function() {
     .then(function(human) {
         console.log("After json", human);
 
-        //change variable def based on layout of future HTML
-        // to make list will be to create variable for ol then append onto that
-        const informationArea = document.getElementById('information');
-        const name = document.createElement('h3');
+        // console.log('character name', typeof characterName);
+        
+        const name = document.querySelector('.race');
+        const abilities = document.querySelector('.attributesList');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
-
+        const charName = document.querySelector('.name');
 
         characterObject.name = human.name
         characterObject.prof = human.starting_proficiencies.length
         characterObject.lang = human.languages[0]
         characterObject.traits = human.traits.length
         console.log('characterObject', characterObject);
-        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        localStorage.setItem(characterName, JSON.stringify(characterObject))
         console.log('json human name', JSON.parse(localStorage.getItem(characterObject.name)))
 
-
         name.textContent = 'Race: ' + human.name;
-        prof.textContent = 'Proficiencies: ' + 'None';
+        prof.textContent = 'Proficiencies: None';
         lang.textContent = 'Languages: ' + human.languages[0].name;
         traits.textContent = 'Traits: None';
+        charName.textContent = 'Character Name: ' + characterName;
 
-        //rearrange append information based on changed variables above
-        //also..appends are not working correctly. everything currents get put in an ordered list, ...
-        //and under h3 tag when the h3 only needs to be the "name" variable
-        informationArea.append(name);
-        name.append(prof);
-        name.append(lang);
-        name.append(traits);
+        abilities.append(prof);
+        abilities.append(lang);
+        abilities.append(traits);
     })
 }
 
-const dwarfStats = function() {
+const dwarfStats = function(characterName) {
     fetch('https://www.dnd5eapi.co/api/races/dwarf')
     .then(function(response) {
         return response.json()
@@ -56,35 +64,34 @@ const dwarfStats = function() {
     .then(function(dwarf) {
         console.log("After json", dwarf);
 
-        //change variable def based on layout of future HTML
-        const informationArea2 = document.getElementById('information2');
-        const name = document.createElement('h3');
+        const name = document.querySelector('.race');
+        const abilities = document.querySelector('.attributesList');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
+        const charName = document.querySelector('.name');
         
         characterObject.name = dwarf.name
         characterObject.prof = dwarf.starting_proficiencies.length
         characterObject.lang = dwarf.languages[0]
         characterObject.traits = dwarf.traits.length
         console.log('characterObject', characterObject);
-        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        localStorage.setItem(characterName, JSON.stringify(characterObject))
         console.log('json dwarf name', JSON.parse(localStorage.getItem(characterObject.name)))
 
         name.textContent = 'Race: ' + dwarf.name;
         prof.textContent = 'Proficiencies: ' + dwarf.starting_proficiencies[0].name + ', ' + dwarf.starting_proficiencies[1].name + ', ' + dwarf.starting_proficiencies[2].name + ', ' + dwarf.starting_proficiencies[3].name;
         lang.textContent = 'Languages: ' + dwarf.languages[0].name + ', ' + dwarf.languages[1].name;
         traits.textContent = 'Traits: ' + dwarf.traits[0].name + ', ' + dwarf.traits[1].name + ', ' + dwarf.traits[2].name + ', ' + dwarf.traits[3].name; + ', ' + dwarf.traits[4].name;
+        charName.textContent = 'Character Name: ' + characterName;
 
-        //rearrange append information based on changed variables above
-        informationArea2.append(name);
-        name.append(prof);
-        name.append(lang);
-        name.append(traits);
+        abilities.append(prof);
+        abilities.append(lang);
+        abilities.append(traits);
     })
 }
 
-const elfStats = function() {
+const elfStats = function(characterName) {
     fetch('https://www.dnd5eapi.co/api/races/elf')
     .then(function(response) {
         return response.json()
@@ -92,36 +99,34 @@ const elfStats = function() {
     .then(function(elf) {
         console.log("After json", elf);
 
-        //change variable def based on layout of future HTML
-        const informationArea3 = document.getElementById('information2');
-        const name = document.createElement('h3');
+        const name = document.querySelector('.race');
+        const abilities = document.querySelector('.attributesList');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
+        const charName = document.querySelector('.name');
 
         characterObject.name = elf.name
         characterObject.prof = elf.starting_proficiencies.length
         characterObject.lang = elf.languages[0]
         characterObject.traits = elf.traits.length
         console.log('characterObject', characterObject);
-        localStorage.setItem(characterObject.name, JSON.stringify(characterObject))
+        localStorage.setItem(characterName, JSON.stringify(characterObject))
         console.log('json elf name', JSON.parse(localStorage.getItem(characterObject.name)))
-
 
         name.textContent = 'Race: ' + elf.name;
         prof.textContent = 'Proficiencies: ' + elf.starting_proficiencies[0].name;
         lang.textContent = 'Languages: ' + elf.languages[0].name + ', ' + elf.languages[1].name;
         traits.textContent = 'Traits: ' + elf.traits[0].name + ', ' + elf.traits[1].name + ', ' + elf.traits[2].name + ', ' + elf.traits[3].name;
-
-        //rearrange append information based on changed variables above
-        informationArea3.append(name);
-        name.append(prof);
-        name.append(lang);
-        name.append(traits);
+        charName.textContent = 'Character Name: ' + characterName;
+        
+        abilities.append(prof);
+        abilities.append(lang);
+        abilities.append(traits);
     })
 }
 
-const halflingStats = function() {
+const halflingStats = function(characterName) {
     fetch('https://www.dnd5eapi.co/api/races/halfling')
     .then(function(response) {
         return response.json()
@@ -129,12 +134,12 @@ const halflingStats = function() {
     .then(function(halfling) {
         console.log("After json", halfling);
 
-        //change variable def based on layout of future HTML
-        const informationArea4 = document.getElementById('information2');
-        const name = document.createElement('h3');
+        const name = document.querySelector('.race');
+        const abilities = document.querySelector('.attributesList');
         const prof = document.createElement('li');
         const lang = document.createElement('li');
-        const traits = document.createElement('li')
+        const traits = document.createElement('li');
+        const charName = document.querySelector('.name');
 
         characterObject.name = halfling.name
         characterObject.prof = halfling.starting_proficiencies.length
@@ -148,20 +153,57 @@ const halflingStats = function() {
         prof.textContent = 'Proficiencies: ' + 'None';
         lang.textContent = 'Languages: ' + halfling.languages[0].name + ', ' + halfling.languages[1].name;
         traits.textContent = 'Traits: ' + halfling.traits[0].name + ', ' + halfling.traits[1].name + ', ' + halfling.traits[2].name;
+        charName.textContent = 'Character Name: ' + characterName;
 
-        //rearrange append information based on changed variables above
-        informationArea4.append(name);
-        name.append(prof);
-        name.append(lang);
-        name.append(traits);
+        abilities.append(prof);
+        abilities.append(lang);
+        abilities.append(traits);
     })
 }
 
+/////////////////////
+
+/////MODEL FORM//////
+
+const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
+    keyboard: false
+  })
+
+submitBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    const characterName = document.getElementById('character-name');
+    const characterInfo = characterName.value.trim()
+    const race = document.getElementById('raceSelect');
+    const raceText = race.options[race.selectedIndex].text;
+    console.log("race info", raceText);
+    
+    switch(raceText) {
+        case 'Human': 
+            humanStats(characterInfo)
+            break;
+        case 'Dwarf':
+            dwarfStats(characterInfo)
+            break
+        case 'Elf':
+            elfStats(characterInfo)
+            break
+        case 'Halfling':
+            halflingStats(characterInfo)
+            break
+            default: 
+            console.log('Invalid Selection!!!');
+    };
+
+    myModal.hide();
+});
+
+//////////////////
+
 // these event listeners are for testing purposes
-buttonEL.addEventListener('click', humanStats);
-buttonEL.addEventListener('click', dwarfStats);
-buttonEL.addEventListener('click', elfStats);
-buttonEL.addEventListener('click', halflingStats);
+// buttonEL.addEventListener('click', humanStats);
+// buttonEL.addEventListener('click', dwarfStats);
+// buttonEL.addEventListener('click', elfStats);
+// buttonEL.addEventListener('click', halflingStats);
 
 
 //////////API for footer/////////
@@ -252,28 +294,6 @@ addBtn.addEventListener('click', function(event){
 })
 })
 
-const characterName = document.getElementById('character-name');
-const raceHuman = document.getElementById('raceOne');
-const raceDwarf = document.getElementById('raceTwo');
-const raceElf = document.getElementById('raceThree');
-const raceHalfling = document.getElementById('raceFour');
-const classFighter = document.getElementById('classOne');
-const classBarbarian = document.getElementById('classTwo');
-const classWizard = document.getElementById('classThree');
-const classRanger = document.getElementById('classFour');
-
-const submitBtn = document.getElementById('modelSubmitBtn');
-
-submitBtn.addEventListener('click', function(event) {
-    event.preventDefault();
-    const characterInfo = {
-        name: characterName.value.trim(),
-        // race: characterRace.value,
-        // class: characterClass.value
-    };
 
 
 
-    localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
-    
-});
