@@ -1,14 +1,10 @@
-const buttonEL = document.getElementById('clickMe');
-const information = document.getElementById('information');
-const raceHuman = document.getElementById('raceOne');
-const raceDwarf = document.getElementById('raceTwo');
-const raceElf = document.getElementById('raceThree');
-const raceHalfling = document.getElementById('raceFour');
-const classFighter = document.getElementById('classOne');
-const classBarbarian = document.getElementById('classTwo');
-const classWizard = document.getElementById('classThree');
-const classRanger = document.getElementById('classFour');
 const submitBtn = document.getElementById('modelSubmitBtn');
+const name = document.querySelector('.race');
+const abilities = document.querySelector('.attributesList');
+const prof = document.createElement('li');
+const lang = document.createElement('li');
+const traits = document.createElement('li');
+const charName = document.querySelector('.name');
 
 let characterObject = {
     name: '',
@@ -26,15 +22,6 @@ const humanStats = function(characterName) {
     })
     .then(function(human) {
         console.log("After json", human);
-
-        // console.log('character name', typeof characterName);
-        
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
 
         characterObject.name = human.name
         characterObject.prof = human.starting_proficiencies.length
@@ -63,13 +50,6 @@ const dwarfStats = function(characterName) {
     })
     .then(function(dwarf) {
         console.log("After json", dwarf);
-
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
         
         characterObject.name = dwarf.name
         characterObject.prof = dwarf.starting_proficiencies.length
@@ -99,13 +79,6 @@ const elfStats = function(characterName) {
     .then(function(elf) {
         console.log("After json", elf);
 
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
-
         characterObject.name = elf.name
         characterObject.prof = elf.starting_proficiencies.length
         characterObject.lang = elf.languages[0]
@@ -134,13 +107,6 @@ const halflingStats = function(characterName) {
     .then(function(halfling) {
         console.log("After json", halfling);
 
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
-
         characterObject.name = halfling.name
         characterObject.prof = halfling.starting_proficiencies.length
         characterObject.lang = halfling.languages[0]
@@ -165,12 +131,15 @@ const halflingStats = function(characterName) {
 
 /////MODEL FORM//////
 
+//TODO: form reset and validation. info is staying on page instead of resetting with new character. 
+
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
     keyboard: false
   })
 
 submitBtn.addEventListener('click', function(event) {
     event.preventDefault();
+    pageReset();
     const characterName = document.getElementById('character-name');
     const characterInfo = characterName.value.trim()
     const race = document.getElementById('raceSelect');
@@ -191,20 +160,22 @@ submitBtn.addEventListener('click', function(event) {
             halflingStats(characterInfo)
             break
             default: 
-            console.log('Invalid Selection!!!');
+            alert('Please Enter all Information');
     };
 
     myModal.hide();
 });
 
+const pageReset = function() { 
+    prof.textContent = 'Proficiencies: None';
+    lang.textContent = 'Languages: ' 
+    traits.textContent = 'Traits: None';
+    charName.textContent = 'Character Name: ' 
+}
+
+
+
 //////////////////
-
-// these event listeners are for testing purposes
-// buttonEL.addEventListener('click', humanStats);
-// buttonEL.addEventListener('click', dwarfStats);
-// buttonEL.addEventListener('click', elfStats);
-// buttonEL.addEventListener('click', halflingStats);
-
 
 //////////API for footer/////////
 
