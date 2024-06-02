@@ -5,12 +5,15 @@ const prof = document.createElement('li');
 const lang = document.createElement('li');
 const traits = document.createElement('li');
 const charName = document.querySelector('.name');
+const charClass = document.querySelector('.class');
+
 
 let characterObject = {
     name: '',
     prof: '',
     lang: '',
-    traits: ''
+    traits: '',
+    class: ''
 } 
 
 ////////RACE STATS//////////////
@@ -141,19 +144,26 @@ submitBtn.addEventListener('click', function(event) {
     const characterName = document.getElementById('character-name');
     const characterInfo = characterName.value.trim()
     const race = document.getElementById('raceSelect');
-    const raceText = race.options[race.selectedIndex].text;
+    const raceText = 'Character Race: ' + race.options[race.selectedIndex].text;
+    const classChoice = document.getElementById('classSelect');
+    const classChoiceText = 'Character Class: ' + classChoice.options[classChoice.selectedIndex].text;
+    const raceSwitch = race.options[race.selectedIndex].text;
+
     console.log("race info", raceText);
+    console.log('class choice: ', classChoiceText);
     
-    switch(raceText) {
-        case 'Human': 
+    charClass.textContent = classChoiceText;
+
+    switch(raceSwitch) { 
+        case 'Human':
             humanStats(characterInfo)
             break;
         case 'Dwarf':
             dwarfStats(characterInfo)
-            break
+            break;
         case 'Elf':
             elfStats(characterInfo)
-            break
+            break;
         case 'Halfling':
             halflingStats(characterInfo)
             break
@@ -167,6 +177,7 @@ const pageReset = function() {
     lang.textContent = 'Languages: ' 
     traits.textContent = 'Traits: None';
     charName.textContent = 'Character Name: ' 
+    charClass.textContent = 'Character Class: '
 }
 
 //////////////////
