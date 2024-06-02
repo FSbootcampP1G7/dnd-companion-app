@@ -181,41 +181,54 @@ const pageReset = function() {
 
 const riddleButton = document.getElementById('riddle');
 const jokePost = document.getElementById('jokePost');
-const answerButton = document.getElementById('answer');
-const jokeAnswer = document.getElementById('jokeAnswer');
-const jokeApi = `https://official-joke-api.appspot.com/random_joke`
+const myHeaders = new Headers();
+myHeaders.append("Accept", "application/json");
 
+const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
+  };
+  
 const riddlePost = function(){
-    fetch(jokeApi)
+    fetch("https://icanhazdadjoke.com/", requestOptions)
     .then(function(response){
-        return response.json()
-    })
-    .then(function(joke){
-        console.log("Jokes here", joke);
-        const jokeArea = document.getElementById('jokePost');
-        const displayJoke = document.createElement('h3');
-        const answerArea = document.getElementById('jokeAnswer')
-        const displayAnswer = document.createElement('h3');
+    return response.json()
+  }) 
+  .then(function(joke){
+    console.log('Jokes here', joke);
+    const jokePost = document.getElementById('jokePost');
+    const displayJoke = document.createElement('h3');
 
-        displayAnswer.textContent = answer.punchline;
-        displayJoke.textContent = joke.setup;
-        jokeArea.append(displayJoke);
-        answerArea.append(displayAnswer);
+    displayJoke.textContent = joke.joke;
+    jokePost.append(displayJoke);
+})
 
-        riddleButton.addEventListener('click', riddlePost);
-        answerButton.addEventListener('click', answerPost); 
-    })
-}
+};
+riddleButton.addEventListener('click', riddlePost);
+
+// const riddlePost = function(){
+//     fetch('https://icanhazdadjoke.com/')
+//     .then(function(response){
+//         return response.json()
+//     })
+//     .then(function(joke){
+//         console.log("Jokes here", joke);
+//         const jokeArea = document.getElementById('jokePost');
+//         const displayJoke = document.createElement('h3');
+//         displayJoke.textContent =  joke.setup;
+//         jokeArea.append(displayJoke);
+//     })
+// }
 // const answerPost = function(){
 //         return(function(answer){
-//         console.log("answer here", answer);
+//         console.log("Jokes here", answer);
 //         const answerArea = document.getElementById('jokeAnswer');
-//         const displayAnswer = document.createElement('h3');
-//         displayAnswer.textContent = answer.punchline;
+//         const displayAnswer= document.createElement('h3');
+//         displayAnswer.textContent =  answer.punchline;
 //         answerArea.append(displayAnswer);
 //     })
 // }
-
 // riddleButton.addEventListener('click', riddlePost);
 // answerButton.addEventListener('click', answerPost);
 
