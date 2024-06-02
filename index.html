@@ -34,43 +34,43 @@
             <form>
               <div class="mb-3">
                 <label for="Character-name" class="col-form-label"><div class="custom-font"> Character's Name:</div></label>
-                <input type="text" class="form-control" id="Character-name">
+                <input type="text" class="form-control" id="character-name">
               </div>
               <div class="mb-3">
                 <label for="Character-class" class="col-form-label"><div class="custom-font"> Character's Class:</div></label>
 
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="classSelect">
                   <option selected>Select a class</option>
-                  <option value="1">Fighter</option>
-                  <option value="2">Barbarian</option>
-                  <option value="3">Wizard</option>
-                  <option value="4">Ranger</option>
+                  <option value="1" id="classOne">Fighter</option>
+                  <option value="2" id="classTwo">Barbarian</option>
+                  <option value="3" id="classThree">Wizard</option>
+                  <option value="4" id="classFour">Ranger</option>
                 </select>
               </div>
               <div class = "mb-3">
                 <label for = "Character-race" class = " col-form-label"><div class="custom-font"> Character's Race:</div></label>
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example">
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="raceSelect">
                   <option selected>Select a race</option>
-                  <option value="1">Human</option>
-                  <option value="2">Dwarf</option>
-                  <option value="3">Elf</option>
-                  <option value="4">Halfling</option>
+                  <option value="1" id="raceOne">Human</option>
+                  <option value="2" id="raceTwo">Dwarf</option>
+                  <option value="3" id="raceThree">Elf</option>
+                  <option value="4" id="raceFour">Halfling</option>
                 </select>
               </div>
             </form>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" id="modelSubmitBtn">Submit</button>
           </div>
         </div>
       </div>
     </div>
   
     <nav><div class="custom-font">
-  <li><a href="https://www.dndbeyond.com/">DnD Beyond</a></li><i class="fas fa-regular fa-fire"></i>
-  <li><a href="https://critrole.com/">Critical Roll</a></li><i class="fas fa-regular fa-fire"></i>
-  <li><a href="https://company.wizards.com/en/">Wizards of the Coast</a></li>
+  <li><a href="https://www.dndbeyond.com/" target="_blank">DnD Beyond</a></li><i class="fas fa-regular fa-fire"></i>
+  <li><a href="https://critrole.com/" target="_blank">Critical Roll</a></li><i class="fas fa-regular fa-fire"></i>
+  <li><a href="https://company.wizards.com/en/" target="_blank">Wizards of the Coast</a></li>
     </nav>
     </div>
 
@@ -83,7 +83,10 @@
       <div class="name">Character's Name:</div>
       <div class="class">Character's Class:</div>
       <div class="race">Character's Race:</div>
-      <div class ="abilities">Abilities:</div>
+      <div class ="abilities">
+        Race Attributes:
+        <li class="attributesList"></li>
+      </div>
       <div class ="spell"> Spell:</div>
       <div class ="skills"> Skill:</div>
     </div>
@@ -112,6 +115,13 @@
     <button id="riddle">Click me for a joke</button>
     <div id="jokePost"></div>
     <li>Github links:</li>
+   
+    <li><a href="https://github.com/cbogart91" target="_blank">Cody</a></li>
+    <li><a href="https://github.com/mtduffey36" target="_blank">Mike D</a></li>
+    <li><a href="https://github.com/aerorider66/" target="_blank">Dan</a></li>
+    <li><a href="https://github.com/gerikoci31/" target="_blank">Geri</a></li>
+    <li><a href="https://github.com/msrva/" target="_blank">Mike S</a></li>
+   
     </div>
   
 </div>
