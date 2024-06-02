@@ -1,3 +1,167 @@
+// This WORKED
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+const classSpecificInfoLvl1 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray1) {
+        console.log("After json", levelArray1);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray1[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray1[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray1[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+
+const classSpecificInfoLvl2 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray2) {
+        console.log("After json", levelArray2);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray2[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray2[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray2[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+const classSpecificInfoLvl3 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray3) {
+        console.log("After json", levelArray3);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray3[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray3[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray3[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+const classSpecificInfoLvl4 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray4) {
+        console.log("After json", levelArray4);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray4[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray4[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray4[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+const classSpecificInfoLvl5 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray5) {
+        console.log("After json", levelArray5);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray5[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray5[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray5[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+
+
+
+
+
+
+
 //
 
 // Guys, I'm punting on the streamlinded version of this.  The difference between my section and Duffy's is that mine goes directly into an array from the landing API.  I have tried every way I can think of to make it work both for the iteration (which I can do) and for giving an output of all 5 levels.  

@@ -17,14 +17,11 @@ let characterObject = {
     traits: ''
 } 
 
-<<<<<<< HEAD
 
 const humanStats = function() {
-=======
 ////////RACE STATS//////////////
 
 const humanStats = function(characterName) {
->>>>>>> c36155ebedf8ccc878c92eda7e12ee7e23ccde74
     fetch('https://www.dnd5eapi.co/api/races/human')
     .then(function(response) {
         return response.json()
@@ -139,14 +136,8 @@ const halflingStats = function(characterName) {
     .then(function(halfling) {
         console.log("After json", halfling);
 
-<<<<<<< HEAD
-        //change variable def based on layout of future HTML
-        const informationArea4 = document.getElementById('information4');
-        const name = document.createElement('h3');
-=======
         const name = document.querySelector('.race');
         const abilities = document.querySelector('.attributesList');
->>>>>>> c36155ebedf8ccc878c92eda7e12ee7e23ccde74
         const prof = document.createElement('li');
         const lang = document.createElement('li');
         const traits = document.createElement('li');
@@ -172,8 +163,7 @@ const halflingStats = function(characterName) {
     })
 }
 
-<<<<<<< HEAD
-//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++ START Class Abilities Block +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 const classSpecificInfo = function() {
@@ -223,7 +213,7 @@ const classSpecificInfo = function() {
     })
 }
 
-//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//++++++++++++++++++++++++++++++++++++++ END Class Abilities Block ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // these event listeners are for testing purposes
 buttonEL.addEventListener('click', humanStats);
@@ -233,7 +223,6 @@ buttonEL.addEventListener('click', halflingStats);
 //buttonEL.addEventListener('click', classSpells);
 buttonEL.addEventListener('click', classSpecificInfo);
 
-=======
 /////////////////////
 
 /////MODEL FORM//////
@@ -277,7 +266,6 @@ submitBtn.addEventListener('click', function(event) {
 // buttonEL.addEventListener('click', dwarfStats);
 // buttonEL.addEventListener('click', elfStats);
 // buttonEL.addEventListener('click', halflingStats);
->>>>>>> c36155ebedf8ccc878c92eda7e12ee7e23ccde74
 
 
 //////////API for footer/////////
@@ -370,7 +358,6 @@ let child, delBtn, h2, p;
 // })
 // })
 
-<<<<<<< HEAD
 const characterName = document.getElementById('character-name');
 const raceHuman = document.getElementById('raceOne');
 const raceDwarf = document.getElementById('raceTwo');
@@ -396,8 +383,6 @@ const submitBtn = document.getElementById('modelSubmitBtn');
 //     localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
     
 // });
-=======
 
 
 
->>>>>>> c36155ebedf8ccc878c92eda7e12ee7e23ccde74
