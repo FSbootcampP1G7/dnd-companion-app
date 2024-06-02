@@ -74,20 +74,23 @@ nav {
     width: 100%;
     color: white;
     padding: 20px;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
     background-color: black;
     border-style: inset;
+    
 }
+
 
 .note-box {
     max-width: 500px;
     width: 100%;
     margin-left: 1400px;
     margin-bottom: 100px;
+    margin-top: -500px;
     border-style: inset;
     background-color: grey;
+    padding: 10px;
 }
 
 .note-box h1 {
@@ -106,21 +109,20 @@ nav {
 
 .title-container button,
 .delete {
-   
     font-size: 20px;
     border-style: inset;
     background-color: black;
 }
 
-.title-container button:hover {
-    background-color: red;
+button:hover {
+    background-image: url('../images/fire2.jpg');
+    
 }
 
 #note-text {
     border: 0;
     outline: 0;
     font-size: 20px;
-    border-radius: 5px;
     background-color: #fff;
     min-height: 200px;
     width: 100%;
@@ -130,13 +132,14 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px 10px;
+   font-size: medium;
 }
 
 .lists {
     background-color: black;
     padding: 15px;
     border-radius: 5px;
-    position: relative;
+    position: relative; 
 }
 
 .delete {
@@ -159,3 +162,4 @@ nav {
  font-size: x-large;
  
 }
+

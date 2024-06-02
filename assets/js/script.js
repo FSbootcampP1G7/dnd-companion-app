@@ -13,8 +13,6 @@ let characterObject = {
     traits: ''
 } 
 
-
-const humanStats = function() {
 ////////RACE STATS//////////////
 
 const humanStats = function(characterName) {
@@ -43,7 +41,6 @@ const humanStats = function(characterName) {
         abilities.append(lang);
         abilities.append(traits);
     })
-}
 }
 
 const dwarfStats = function(characterName) {
@@ -130,166 +127,6 @@ const halflingStats = function(characterName) {
     })
 }
 
-//++++++++++++++++++++++ START Class Abilities Block +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-const classSpecificInfoLvl1 = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(levelArray1) {
-        console.log("After json", levelArray1);
-
-        //tags for HTML
-        const { 
-            level: wizardLevel } 
-        = levelArray1[0];
-        console.log("Wizard Level: ", wizardLevel);
-        
-        const {
-            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
-            = levelArray1[0].spellcasting;
-        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
-        console.log("Level 1 Spell Slots: ", spellsLevel_1);
-        console.log("Level 2 Spell Slots: ", spellsLevel_2);
-        console.log("Level 3 Spell Slots: ", spellsLevel_3);
-
-        const {
-            arcane_recovery_levels: arcaneRecovery } 
-            = levelArray1[0].class_specific;
-            console.log("Level Arcane Recovery: ", arcaneRecovery);
-        }
-    )
-}
-const classSpecificInfoLvl2 = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(levelArray2) {
-        console.log("After json", levelArray2);
-
-        //tags for HTML
-        const { 
-            level: wizardLevel } 
-        = levelArray2[0];
-        console.log("Wizard Level: ", wizardLevel);
-        
-        const {
-            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
-            = levelArray2[0].spellcasting;
-        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
-        console.log("Level 1 Spell Slots: ", spellsLevel_1);
-        console.log("Level 2 Spell Slots: ", spellsLevel_2);
-        console.log("Level 3 Spell Slots: ", spellsLevel_3);
-
-        const {
-            arcane_recovery_levels: arcaneRecovery } 
-            = levelArray2[0].class_specific;
-            console.log("Level Arcane Recovery: ", arcaneRecovery);
-        }
-    )
-}
-
-const classSpecificInfoLvl3 = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(levelArray3) {
-        console.log("After json", levelArray3);
-
-        //tags for HTML
-        const { 
-            level: wizardLevel } 
-        = levelArray3[0];
-        console.log("Wizard Level: ", wizardLevel);
-        
-        const {
-            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
-            = levelArray3[0].spellcasting;
-        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
-        console.log("Level 1 Spell Slots: ", spellsLevel_1);
-        console.log("Level 2 Spell Slots: ", spellsLevel_2);
-        console.log("Level 3 Spell Slots: ", spellsLevel_3);
-
-        const {
-            arcane_recovery_levels: arcaneRecovery } 
-            = levelArray3[0].class_specific;
-            console.log("Level Arcane Recovery: ", arcaneRecovery);
-        }
-    )
-}
-
-const classSpecificInfoLvl4 = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(levelArray4) {
-        console.log("After json", levelArray4);
-
-        //tags for HTML
-        const { 
-            level: wizardLevel } 
-        = levelArray4[0];
-        console.log("Wizard Level: ", wizardLevel);
-        
-        const {
-            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
-            = levelArray4[0].spellcasting;
-        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
-        console.log("Level 1 Spell Slots: ", spellsLevel_1);
-        console.log("Level 2 Spell Slots: ", spellsLevel_2);
-        console.log("Level 3 Spell Slots: ", spellsLevel_3);
-
-        const {
-            arcane_recovery_levels: arcaneRecovery } 
-            = levelArray4[0].class_specific;
-            console.log("Level Arcane Recovery: ", arcaneRecovery);
-        }
-    )
-}
-
-const classSpecificInfoLvl5 = function() {
-    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
-    .then(function(response) {
-         return response.json()
-    })
-    .then(function(levelArray5) {
-        console.log("After json", levelArray5);
-
-        //tags for HTML
-        const { 
-            level: wizardLevel } 
-        = levelArray5[0];
-        console.log("Wizard Level: ", wizardLevel);
-        
-        const {
-            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
-            = levelArray5[0].spellcasting;
-        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
-        console.log("Level 1 Spell Slots: ", spellsLevel_1);
-        console.log("Level 2 Spell Slots: ", spellsLevel_2);
-        console.log("Level 3 Spell Slots: ", spellsLevel_3);
-
-        const {
-            arcane_recovery_levels: arcaneRecovery } 
-            = levelArray5[0].class_specific;
-            console.log("Level Arcane Recovery: ", arcaneRecovery);
-        }
-    )
-}
-
-// //++++++++++++++++++++++++++++++++++++++ END Class Abilities Block ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-// // these event listeners are for testing purposes
-// buttonEL.addEventListener('click', humanStats);
-// buttonEL.addEventListener('click', dwarfStats);
-// buttonEL.addEventListener('click', elfStats);
-// buttonEL.addEventListener('click', halflingStats);
-// //buttonEL.addEventListener('click', classSpells);
-// buttonEL.addEventListener('click', classSpecificInfo);
-
 /////////////////////
 
 /////MODEL FORM//////
@@ -344,43 +181,54 @@ const pageReset = function() {
 
 const riddleButton = document.getElementById('riddle');
 const jokePost = document.getElementById('jokePost');
-const answerButton = document.getElementById('answer');
-const jokeAnswer = document.getElementById('jokeAnswer');
-const jokeApi = `https://official-joke-api.appspot.com/random_joke`
+const myHeaders = new Headers();
+myHeaders.append("Accept", "application/json");
 
+const requestOptions = {
+    method: "GET",
+    headers: myHeaders,
+    redirect: "follow"
+  };
+  
 const riddlePost = function(){
-    fetch(jokeApi)
+    fetch("https://icanhazdadjoke.com/", requestOptions)
     .then(function(response){
-        return response.json()
-    })
-    .then(function(joke){
-        console.log("Jokes here", joke);
-        const jokeArea = document.getElementById('jokePost');
-        const displayJoke = document.createElement('h3');
-        const answerArea = document.getElementById('jokeAnswer')
-        const displayAnswer = document.createElement('h3');
+    return response.json()
+  }) 
+  .then(function(joke){
+    console.log('Jokes here', joke);
+    const jokePost = document.getElementById('jokePost');
+    const displayJoke = document.createElement('h3');
 
-        displayAnswer.textContent = answer.punchline;
-        displayJoke.textContent = joke.setup;
-        jokeArea.append(displayJoke);
-        answerArea.append(displayAnswer);
+    displayJoke.textContent = joke.joke;
+    jokePost.append(displayJoke);
+})
 
-        riddleButton.addEventListener('click', riddlePost);
-        answerButton.addEventListener('click', answerPost); 
-    })
-}
-// riddleButton.addEventListener('click', riddlePost);
-// answerButton.addEventListener('click', answerPost);
+};
+riddleButton.addEventListener('click', riddlePost);
+
+// const riddlePost = function(){
+//     fetch('https://icanhazdadjoke.com/')
+//     .then(function(response){
+//         return response.json()
+//     })
+//     .then(function(joke){
+//         console.log("Jokes here", joke);
+//         const jokeArea = document.getElementById('jokePost');
+//         const displayJoke = document.createElement('h3');
+//         displayJoke.textContent =  joke.setup;
+//         jokeArea.append(displayJoke);
+//     })
+// }
 // const answerPost = function(){
 //         return(function(answer){
-//         console.log("answer here", answer);
+//         console.log("Jokes here", answer);
 //         const answerArea = document.getElementById('jokeAnswer');
-//         const displayAnswer = document.createElement('h3');
-//         displayAnswer.textContent = answer.punchline;
+//         const displayAnswer= document.createElement('h3');
+//         displayAnswer.textContent =  answer.punchline;
 //         answerArea.append(displayAnswer);
 //     })
 // }
-
 // riddleButton.addEventListener('click', riddlePost);
 // answerButton.addEventListener('click', answerPost);
 
@@ -394,67 +242,41 @@ let output = document.getElementById('output');
 
 let child, delBtn, h2, p;
 
-// addBtn.addEventListener('click', function(event){
-//     event.preventDefault();
-//     if ((inputTitle.value == '') | (inputTitle.value == ' ')) {
-//         alert("Please write a title.")
+addBtn.addEventListener('click', function(event){
+    event.preventDefault();
+    if ((inputTitle.value == '') | (inputTitle.value == ' ')) {
+        alert("Please write a title.")
 
-//     }else if((inputText.value == '') | (inputText.value == ' ')){
-//         alert("Please write a note.")
-//     }else {
-//         child = document.createElement("div");
-//         delBtn = document.createElement("button");
-//         h2 = document.createElement("h2");
-//         p = document.createElement("p");
+    }else if((inputText.value == '') | (inputText.value == ' ')){
+        alert("Please write a note.")
+    }else {
+        child = document.createElement("div");
+        delBtn = document.createElement("button");
+        h2 = document.createElement("h2");
+        p = document.createElement("p");
 
-//         h2.innerHTML = inputTitle.value;
-//         p.innerHTML = inputText.value;
-//         delBtn.innerHTML = "Delete";
+        h2.innerHTML = inputTitle.value;
+        p.innerHTML = inputText.value;
+        delBtn.innerHTML = "Delete";
         
-//         child.classList.add('lists');
-//         delBtn.classList.add('delete');
-//         h2.classList.add('output-title');
-//         p.classList.add('text');
+        child.classList.add('lists');
+        delBtn.classList.add('delete');
+        h2.classList.add('output-title');
+        p.classList.add('text');
 
-//         child.appendChild(delBtn);
-//         child.appendChild(h2);
-//         child.appendChild(p);
-//         output.appendChild(child);
+        child.appendChild(delBtn);
+        child.appendChild(h2);
+        child.appendChild(p);
+        output.appendChild(child);
 
-//         inputTitle.innerHTML = "";
-//         inputText.innerHTML = "";
-//     }
-//     delBtn.addEventListener('click', function(){
-//         output.removeChild(this.parentElement);
+        inputTitle.innerHTML = "";
+        inputText.innerHTML = "";
+    }
+    delBtn.addEventListener('click', function(){
+        output.removeChild(this.parentElement);
         
-// })
-// })
-
-const characterName = document.getElementById('character-name');
-const raceHuman = document.getElementById('raceOne');
-const raceDwarf = document.getElementById('raceTwo');
-const raceElf = document.getElementById('raceThree');
-const raceHalfling = document.getElementById('raceFour');
-const classFighter = document.getElementById('classOne');
-const classBarbarian = document.getElementById('classTwo');
-const classWizard = document.getElementById('classThree');
-const classRanger = document.getElementById('classFour');
-
-//const submitBtn = document.getElementById('modelSubmitBtn');
-
-// submitBtn.addEventListener('click', function(event) {
-//     event.preventDefault();
-//     const characterInfo = {
-//         name: characterName.value.trim(),
-//         // race: characterRace.value,
-//         // class: characterClass.value
-//     };
-
-
-
-//     localStorage.setItem('characterInfo', JSON.stringify(characterInfo));
-    
-// });
+})
+})
 
 
 
