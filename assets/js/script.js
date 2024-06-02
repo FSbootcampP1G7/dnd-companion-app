@@ -1,14 +1,10 @@
-const buttonEL = document.getElementById('clickMe');
-const information = document.getElementById('information');
-const raceHuman = document.getElementById('raceOne');
-const raceDwarf = document.getElementById('raceTwo');
-const raceElf = document.getElementById('raceThree');
-const raceHalfling = document.getElementById('raceFour');
-const classFighter = document.getElementById('classOne');
-const classBarbarian = document.getElementById('classTwo');
-const classWizard = document.getElementById('classThree');
-const classRanger = document.getElementById('classFour');
 const submitBtn = document.getElementById('modelSubmitBtn');
+const name = document.querySelector('.race');
+const abilities = document.querySelector('.attributesList');
+const prof = document.createElement('li');
+const lang = document.createElement('li');
+const traits = document.createElement('li');
+const charName = document.querySelector('.name');
 
 let characterObject = {
     name: '',
@@ -29,15 +25,6 @@ const humanStats = function(characterName) {
     .then(function(human) {
         console.log("After json", human);
 
-        // console.log('character name', typeof characterName);
-        
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
-
         characterObject.name = human.name
         characterObject.prof = human.starting_proficiencies.length
         characterObject.lang = human.languages[0]
@@ -57,6 +44,7 @@ const humanStats = function(characterName) {
         abilities.append(traits);
     })
 }
+}
 
 const dwarfStats = function(characterName) {
     fetch('https://www.dnd5eapi.co/api/races/dwarf')
@@ -65,13 +53,6 @@ const dwarfStats = function(characterName) {
     })
     .then(function(dwarf) {
         console.log("After json", dwarf);
-
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
         
         characterObject.name = dwarf.name
         characterObject.prof = dwarf.starting_proficiencies.length
@@ -101,13 +82,6 @@ const elfStats = function(characterName) {
     .then(function(elf) {
         console.log("After json", elf);
 
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
-
         characterObject.name = elf.name
         characterObject.prof = elf.starting_proficiencies.length
         characterObject.lang = elf.languages[0]
@@ -136,13 +110,6 @@ const halflingStats = function(characterName) {
     .then(function(halfling) {
         console.log("After json", halfling);
 
-        const name = document.querySelector('.race');
-        const abilities = document.querySelector('.attributesList');
-        const prof = document.createElement('li');
-        const lang = document.createElement('li');
-        const traits = document.createElement('li');
-        const charName = document.querySelector('.name');
-
         characterObject.name = halfling.name
         characterObject.prof = halfling.starting_proficiencies.length
         characterObject.lang = halfling.languages[0]
@@ -164,68 +131,170 @@ const halflingStats = function(characterName) {
 }
 
 //++++++++++++++++++++++ START Class Abilities Block +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
-const classSpecificInfo = function() {
+const classSpecificInfoLvl1 = function() {
     fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
     .then(function(response) {
          return response.json()
     })
-    .then(function(levels) {
-        console.log("After json", levels);
+    .then(function(levelArray1) {
+        console.log("After json", levelArray1);
 
-        //change variable def based on layout of future HTML 
-        const informationArea5 = document.getElementById('information5');
-        const level = document.createElement('h3');
-        const cantrips = document.createElement('li');
-        const spellsByLevel1 = document.createElement('li');
-        const spellsByLevel2 = document.createElement('li');
-        const spellsByLevel3 = document.createElement('li');
-        const arcaneRecovery = document.createElement('li');
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray1[0];
+        console.log("Wizard Level: ", wizardLevel);
         
-        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray1[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
 
-        for (i = 0; i < 5; i++) {
-            level.textContent = 'Wizard Level: ' + levels[i].level;
-            console.log(level.textContent);
-
-            cantrips.textContent = "Cantrips for this level: " + levels[i].spellcasting.cantrips_known;
-            spellsByLevel1.textContent = "Level 1 spell slots: " + levels[i].spellcasting.spell_slots_level_1;
-            spellsByLevel2.textContent = "Level 2 spell slots: " + levels[i].spellcasting.spell_slots_level_2;
-            spellsByLevel3.textContent = "Level 3 spell slots: " + levels[i].spellcasting.spell_slots_level_3;
-            arcaneRecovery.textContent = "Arcane Recovery: " + levels[i].class_specific.arcane_recovery_levels;
-
-            // console.log(cantrips.textContent);
-            // console.log(spellsByLevel1.textContent);
-            // console.log(spellsByLevel2.textContent);
-            // console.log(spellsByLevel3.textContent);
-            // console.log(arcaneRecovery.textContent);
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray1[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
         }
-        //rearrange append information based on changed variables above
-        for (i = 0; i < 5; i++) {
-            informationArea5.append(level);
-            informationArea5.append(cantrips);
-            informationArea5.append(spellsByLevel1);
-            informationArea5.append(spellsByLevel2);
-            informationArea5.append(spellsByLevel3);
-            informationArea5.append(arcaneRecovery);
-        }
+    )
+}
+const classSpecificInfoLvl2 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
     })
+    .then(function(levelArray2) {
+        console.log("After json", levelArray2);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray2[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray2[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray2[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
 }
 
-//++++++++++++++++++++++++++++++++++++++ END Class Abilities Block ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+const classSpecificInfoLvl3 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray3) {
+        console.log("After json", levelArray3);
 
-// these event listeners are for testing purposes
-buttonEL.addEventListener('click', humanStats);
-buttonEL.addEventListener('click', dwarfStats);
-buttonEL.addEventListener('click', elfStats);
-buttonEL.addEventListener('click', halflingStats);
-//buttonEL.addEventListener('click', classSpells);
-buttonEL.addEventListener('click', classSpecificInfo);
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray3[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray3[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray3[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+const classSpecificInfoLvl4 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray4) {
+        console.log("After json", levelArray4);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray4[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray4[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray4[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+const classSpecificInfoLvl5 = function() {
+    fetch("https://www.dnd5eapi.co/api/classes/wizard/levels")
+    .then(function(response) {
+         return response.json()
+    })
+    .then(function(levelArray5) {
+        console.log("After json", levelArray5);
+
+        //tags for HTML
+        const { 
+            level: wizardLevel } 
+        = levelArray5[0];
+        console.log("Wizard Level: ", wizardLevel);
+        
+        const {
+            cantrips_known: level_1Cantrips, spell_slots_level_1: spellsLevel_1, spell_slots_level_2: spellsLevel_2, spell_slots_level_3: spellsLevel_3 } 
+            = levelArray5[0].spellcasting;
+        console.log("Level 1 Cantrip Slots: ", level_1Cantrips);
+        console.log("Level 1 Spell Slots: ", spellsLevel_1);
+        console.log("Level 2 Spell Slots: ", spellsLevel_2);
+        console.log("Level 3 Spell Slots: ", spellsLevel_3);
+
+        const {
+            arcane_recovery_levels: arcaneRecovery } 
+            = levelArray5[0].class_specific;
+            console.log("Level Arcane Recovery: ", arcaneRecovery);
+        }
+    )
+}
+
+// //++++++++++++++++++++++++++++++++++++++ END Class Abilities Block ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+// // these event listeners are for testing purposes
+// buttonEL.addEventListener('click', humanStats);
+// buttonEL.addEventListener('click', dwarfStats);
+// buttonEL.addEventListener('click', elfStats);
+// buttonEL.addEventListener('click', halflingStats);
+// //buttonEL.addEventListener('click', classSpells);
+// buttonEL.addEventListener('click', classSpecificInfo);
 
 /////////////////////
 
 /////MODEL FORM//////
+
+//TODO: form reset and validation. info is staying on page instead of resetting with new character. 
 
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
     keyboard: false
@@ -233,6 +302,7 @@ const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
 
 submitBtn.addEventListener('click', function(event) {
     event.preventDefault();
+    pageReset();
     const characterName = document.getElementById('character-name');
     const characterInfo = characterName.value.trim()
     const race = document.getElementById('raceSelect');
@@ -253,20 +323,22 @@ submitBtn.addEventListener('click', function(event) {
             halflingStats(characterInfo)
             break
             default: 
-            console.log('Invalid Selection!!!');
+            alert('Please Enter all Information');
     };
 
     myModal.hide();
 });
 
+const pageReset = function() { 
+    prof.textContent = 'Proficiencies: None';
+    lang.textContent = 'Languages: ' 
+    traits.textContent = 'Traits: None';
+    charName.textContent = 'Character Name: ' 
+}
+
+
+
 //////////////////
-
-// these event listeners are for testing purposes
-// buttonEL.addEventListener('click', humanStats);
-// buttonEL.addEventListener('click', dwarfStats);
-// buttonEL.addEventListener('click', elfStats);
-// buttonEL.addEventListener('click', halflingStats);
-
 
 //////////API for footer/////////
 
@@ -368,7 +440,7 @@ const classBarbarian = document.getElementById('classTwo');
 const classWizard = document.getElementById('classThree');
 const classRanger = document.getElementById('classFour');
 
-const submitBtn = document.getElementById('modelSubmitBtn');
+//const submitBtn = document.getElementById('modelSubmitBtn');
 
 // submitBtn.addEventListener('click', function(event) {
 //     event.preventDefault();
