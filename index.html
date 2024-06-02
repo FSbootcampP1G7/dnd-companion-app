@@ -31,16 +31,22 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form>
+            <form class="needs-validation" novalidate>
               <div class="mb-3">
                 <label for="Character-name" class="col-form-label"><div class="custom-font"> Character's Name:</div></label>
-                <input type="text" class="form-control" id="character-name">
+                <input type="text" class="form-control" placeholder="Character Name" id="character-name" required >
+                <div class="invalid-feedback">
+                  Please provide a valid name.
+                </div>
               </div>
               <div class="mb-3">
                 <label for="Character-class" class="col-form-label"><div class="custom-font"> Character's Class:</div></label>
 
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="classSelect">
-                  <option selected>Select a class</option>
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" placeholder="Select Class" id="classSelect" required="true">
+                  <div class="invalid-feedback">
+                    Please provide a valid Class.
+                  </div>
+                  <option selected disabled>Select a class</option>
                   <option value="1" id="classOne">Fighter</option>
                   <option value="2" id="classTwo">Barbarian</option>
                   <option value="3" id="classThree">Wizard</option>
@@ -49,7 +55,10 @@
               </div>
               <div class = "mb-3">
                 <label for = "Character-race" class = " col-form-label"><div class="custom-font"> Character's Race:</div></label>
-                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="raceSelect">
+                <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="raceSelect" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid Race.
+                  </div>
                   <option selected>Select a race</option>
                   <option value="1" id="raceOne">Human</option>
                   <option value="2" id="raceTwo">Dwarf</option>
@@ -80,9 +89,9 @@
   <body>
 
     <div class="custom-font">
-      <div class="name">Character's Name:</div>
-      <div class="class">Character's Class:</div>
-      <div class="race">Character's Race:</div>
+      <div class="name">Character Name:</div>
+      <div class="class">Character Class:</div>
+      <div class="race">Character Race:</div>
       <div class ="abilities">
         Race Attributes:
         <li class="attributesList"></li>
@@ -117,10 +126,9 @@
     <li>Github links:</li>
    
     <li><a href="https://github.com/cbogart91" target="_blank">Cody</a></li>
-    <li><a href="https://github.com/mtduffey36" target="_blank">Mike D</a></li>
-    <li><a href="https://github.com/aerorider66/" target="_blank">Dan</a></li>
+    <li><a href="https://github.com/mtduffey36" target="_blank">Mike</a></li>
+    <li><a href="https://github.com/aerorider66/" target="_blank">Dave</a></li>
     <li><a href="https://github.com/gerikoci31/" target="_blank">Geri</a></li>
-    <li><a href="https://github.com/msrva/" target="_blank">Mike S</a></li>
    
     </div>
   
@@ -132,16 +140,3 @@
     
  </body>
 </html>
-
-
-<!--jQuery version 3.1.7.min-->
-    <!-- <script
-  src="https://code.jquery.com/jquery-3.7.1.min.js"
-  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
-  crossorigin="anonymous"></script> -->
-
-<!-- jQuery UI 1.13.3 -->
-    <!-- <script
-  src="https://code.jquery.com/ui/1.13.3/jquery-ui.min.js"
-  integrity="sha256-sw0iNNXmOJbQhYFuC9OF2kOlD5KQKe1y5lfBn4C9Sjg="
-  crossorigin="anonymous"></script> -->

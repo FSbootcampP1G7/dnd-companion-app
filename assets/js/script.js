@@ -5,12 +5,15 @@ const prof = document.createElement('li');
 const lang = document.createElement('li');
 const traits = document.createElement('li');
 const charName = document.querySelector('.name');
+const charClass = document.querySelector('.class');
+
 
 let characterObject = {
     name: '',
     prof: '',
     lang: '',
-    traits: ''
+    traits: '',
+    class: ''
 } 
 
 ////////RACE STATS//////////////
@@ -131,8 +134,6 @@ const halflingStats = function(characterName) {
 
 /////MODEL FORM//////
 
-//TODO: form reset and validation. info is staying on page instead of resetting with new character. 
-
 const myModal = new bootstrap.Modal(document.getElementById('exampleModal'), {
     keyboard: false
   })
@@ -143,26 +144,31 @@ submitBtn.addEventListener('click', function(event) {
     const characterName = document.getElementById('character-name');
     const characterInfo = characterName.value.trim()
     const race = document.getElementById('raceSelect');
-    const raceText = race.options[race.selectedIndex].text;
+    const raceText = 'Character Race: ' + race.options[race.selectedIndex].text;
+    const classChoice = document.getElementById('classSelect');
+    const classChoiceText = 'Character Class: ' + classChoice.options[classChoice.selectedIndex].text;
+    const raceSwitch = race.options[race.selectedIndex].text;
+
     console.log("race info", raceText);
+    console.log('class choice: ', classChoiceText);
     
-    switch(raceText) {
-        case 'Human': 
+    charClass.textContent = classChoiceText;
+
+    switch(raceSwitch) { 
+        case 'Human':
             humanStats(characterInfo)
             break;
         case 'Dwarf':
             dwarfStats(characterInfo)
-            break
+            break;
         case 'Elf':
             elfStats(characterInfo)
-            break
+            break;
         case 'Halfling':
             halflingStats(characterInfo)
             break
             default: 
-            alert('Please Enter all Information');
-    };
-
+    }; 
     myModal.hide();
 });
 
@@ -171,9 +177,8 @@ const pageReset = function() {
     lang.textContent = 'Languages: ' 
     traits.textContent = 'Traits: None';
     charName.textContent = 'Character Name: ' 
+    charClass.textContent = 'Character Class: '
 }
-
-
 
 //////////////////
 
