@@ -30,6 +30,6 @@ This web application is for individuals who play Dungeons & Dragons. It is desig
 
 ## Static Images
 
-![D&D Companion App!](/assets/images/dnd-app.PNG "Screen-Shot of DnD page")
+![D&D Companion App!](/assets/images/dnd-app2.PNG "Screen-Shot of DnD page")
 
 <!-- TODO: Get updated static image after last merge -->
