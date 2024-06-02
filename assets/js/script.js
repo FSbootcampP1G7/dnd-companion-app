@@ -129,6 +129,11 @@ const halflingStats = function(characterName) {
 
 /////////////////////
 
+
+
+
+//++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 /////MODEL FORM//////
 
 //TODO: form reset and validation. info is staying on page instead of resetting with new character. 
